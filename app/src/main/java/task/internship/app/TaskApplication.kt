@@ -15,7 +15,6 @@ class TaskApplication : Application() {
     init {
         try {
             mSocket = IO.socket(BuildConfig.BASE_URL)
-            Log.d(TAG, "initialised")
 
         } catch (e: URISyntaxException) {
             Log.d(TAG, e.message.toString())

@@ -56,4 +56,23 @@ object DomainModule {
     @Singleton
     fun provideCloseConnectionUseCase(repository: Repository): CloseConnectionUseCase =
         CloseConnectionUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideAddUserUseCase(repository: Repository): AddUserUseCase = AddUserUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideListenOnLoginUseCase(repository: Repository): ListenOnLoginUseCase =
+        ListenOnLoginUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideAddTypingUseCase(repository: Repository): AddTypingUseCase =
+        AddTypingUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideSendMessageUseCase(repository: Repository): SendMessageUseCase =
+        SendMessageUseCase(repository)
 }
