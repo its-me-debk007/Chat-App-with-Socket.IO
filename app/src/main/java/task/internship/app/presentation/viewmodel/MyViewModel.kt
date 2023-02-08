@@ -9,19 +9,15 @@ import javax.inject.Inject
 @HiltViewModel
 class MyViewModel @Inject constructor(
     private val closeConnectionUseCase: CloseConnectionUseCase,
-    private val listenEventConnectUseCase: ListenEventConnectUseCase,
-    private val listenEventDisconnectUseCase: ListenEventDisconnectUseCase,
     private val listenNewMsgUseCase: ListenNewMsgUseCase,
-    private val listenStopTypingUseCase: ListenStopTypingUseCase,
-    private val listenTypingUseCase: ListenTypingUseCase,
     private val listenUserJoinUseCase: ListenUserJoinUseCase,
     private val listenUserLeaveUseCase: ListenUserLeaveUseCase,
     private val startConnectionUseCase: StartConnectionUseCase,
     private val addUserUseCase: AddUserUseCase,
     private val listenOnLoginUseCase: ListenOnLoginUseCase,
-    private val addTypingUseCase: AddTypingUseCase,
     private val sendMessageUseCase: SendMessageUseCase
 ) : ViewModel() {
+
     init {
         startConnectionUseCase()
     }
@@ -32,11 +28,11 @@ class MyViewModel @Inject constructor(
 
     fun listenOnLogin(listener: Listener) = listenOnLoginUseCase(listener)
 
-    fun addTyping() = addTypingUseCase()
-
     fun sendMessage(message: String) = sendMessageUseCase(message)
 
     fun listenNewMessage(listener: Listener) = listenNewMsgUseCase(listener)
 
     fun listenUserLeaving(listener: Listener) = listenUserLeaveUseCase(listener)
+
+    fun closeConnection() = closeConnectionUseCase()
 }

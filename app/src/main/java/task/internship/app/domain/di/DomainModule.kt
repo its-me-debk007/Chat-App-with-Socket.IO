@@ -14,28 +14,8 @@ object DomainModule {
 
     @Provides
     @Singleton
-    fun provideListenEventConnectUseCase(repository: Repository): ListenEventConnectUseCase =
-        ListenEventConnectUseCase(repository)
-
-    @Provides
-    @Singleton
-    fun provideListenEventDisconnectUseCase(repository: Repository): ListenEventDisconnectUseCase =
-        ListenEventDisconnectUseCase(repository)
-
-    @Provides
-    @Singleton
-    fun provideListenTypingUseCase(repository: Repository): ListenTypingUseCase =
-        ListenTypingUseCase(repository)
-
-    @Provides
-    @Singleton
     fun provideListenNewMsgUseCase(repository: Repository): ListenNewMsgUseCase =
         ListenNewMsgUseCase(repository)
-
-    @Provides
-    @Singleton
-    fun provideListenStopTypingUseCase(repository: Repository): ListenStopTypingUseCase =
-        ListenStopTypingUseCase(repository)
 
     @Provides
     @Singleton
@@ -65,11 +45,6 @@ object DomainModule {
     @Singleton
     fun provideListenOnLoginUseCase(repository: Repository): ListenOnLoginUseCase =
         ListenOnLoginUseCase(repository)
-
-    @Provides
-    @Singleton
-    fun provideAddTypingUseCase(repository: Repository): AddTypingUseCase =
-        AddTypingUseCase(repository)
 
     @Provides
     @Singleton
