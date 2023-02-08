@@ -2,7 +2,7 @@ package task.internship.app.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.socket.emitter.Emitter
+import io.socket.emitter.Emitter.Listener
 import task.internship.app.domain.usecase.*
 import javax.inject.Inject
 
@@ -28,11 +28,15 @@ class MyViewModel @Inject constructor(
 
     fun addUser(username: String) = addUserUseCase(username)
 
-    fun listenOnLogin(listener: Emitter.Listener) = listenOnLoginUseCase(listener)
+    fun listenUserJoining(listener: Listener) = listenUserJoinUseCase(listener)
+
+    fun listenOnLogin(listener: Listener) = listenOnLoginUseCase(listener)
 
     fun addTyping() = addTypingUseCase()
 
     fun sendMessage(message: String) = sendMessageUseCase(message)
 
-    fun listenNewMessage(listener: Emitter.Listener) = listenNewMsgUseCase(listener)
+    fun listenNewMessage(listener: Listener) = listenNewMsgUseCase(listener)
+
+    fun listenUserLeaving(listener: Listener) = listenUserLeaveUseCase(listener)
 }
