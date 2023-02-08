@@ -46,4 +46,20 @@ class RepositoryImpl @Inject constructor(private val socket: Socket): Repository
     override fun stopListeningEverything() {
         socket.off()
     }
+
+    override fun addUser(username: String) {
+        socket.emit(ADD_USER, username)
+    }
+
+    override fun listenOnLogin(listener: Emitter.Listener) {
+        socket.on(LOGIN, listener)
+    }
+
+    override fun addTyping() {
+        socket.emit(TYPING)
+    }
+
+    override fun sendMessage(message: String) {
+        socket.emit(NEW_MESSAGE, message)
+    }
 }

@@ -22,4 +22,12 @@ interface Repository {
     fun listenEventConnect(listener: Emitter.Listener)
 
     fun stopListeningEverything()
+
+    fun addUser(username: String)
+
+    fun listenOnLogin(listener: Emitter.Listener)
+
+    fun addTyping()
+
+    fun sendMessage(message: String)
 }

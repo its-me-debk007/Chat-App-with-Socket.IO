@@ -66,6 +66,11 @@ dependencies {
     implementation ('io.socket:socket.io-client:2.0.0') {
         exclude group: 'org.json', module: 'json'
     }
+    implementation "androidx.fragment:fragment-ktx:1.5.5"
+    // Epoxy
+    def epoxyVersion = "5.1.1"
+    implementation "com.airbnb.android:epoxy:$epoxyVersion"
+    kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
 }
 
 kapt {
