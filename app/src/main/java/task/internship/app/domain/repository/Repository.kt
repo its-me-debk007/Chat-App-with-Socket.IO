@@ -13,21 +13,11 @@ interface Repository {
 
     fun listenUserLeaving(listener: Emitter.Listener)
 
-    fun listenTyping(listener: Emitter.Listener)
-
-    fun listenStopTyping(listener: Emitter.Listener)
-
-    fun listenEventDisconnect(listener: Emitter.Listener)
-
-    fun listenEventConnect(listener: Emitter.Listener)
-
     fun stopListeningEverything()
 
     fun addUser(username: String)
 
     fun listenOnLogin(listener: Emitter.Listener)
-
-    fun addTyping()
 
     fun sendMessage(message: String)
 }
