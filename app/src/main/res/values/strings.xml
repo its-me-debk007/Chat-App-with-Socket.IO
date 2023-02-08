@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Task</string>
+    <string name="enter_ur_name">Enter ur name</string>
+    <string name="enter_chat_room">Enter Chat Room!</string>
+    <string name="enter_message">Enter message</string>
+    <string name="welcome_to_socket_io_chat_app">Welcome to Socket.IO Chat App!</string>
 </resources>
